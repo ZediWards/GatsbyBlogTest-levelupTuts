@@ -3,26 +3,30 @@ module.exports = {
     title: `Louie Logs :)`,
     description: `The place for Louie's adventures!`,
     author: `Zediwards`,
+    // production url for /sitemap.xml
+    siteUrl: "https://musing-kowalevski-ebd946.netlify.app/",
   },
   plugins: [
+    "gatsby-plugin-sitemap",
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-styled-components",
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
+      // info used to save web site as a PWA on mobile
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Louie Logs`,
+        short_name: `Louie`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#524763`,
+        theme_color: `#524763`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
+    // To learn more, visit: https://gatsby.dev/offline (cached version of site via service worker)
     `gatsby-plugin-offline`,
     {
       resolve: "gatsby-source-filesystem",
@@ -40,6 +44,7 @@ module.exports = {
       },
     },
     "gatsby-transformer-remark",
+    `gatsby-plugin-netlify-cms`,
     "gatsby-plugin-netlify", // make sure it is last in array
   ],
 }
