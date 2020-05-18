@@ -43,6 +43,13 @@ module.exports = {
         name: "images",
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/src/blog`,
+        name: "blog",
+      },
+    },
     "gatsby-transformer-remark",
     `gatsby-plugin-netlify-cms`,
     "gatsby-plugin-netlify", // make sure it is last in array
